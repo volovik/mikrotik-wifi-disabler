@@ -1,4 +1,4 @@
 #disable wifi if lan port connected
-:global lan ether2-master-local;
+:global lan ether2
 :global wan wlan1
 :if ([interface get $lan running]=true) do={:if ([interface get $wan running]=false) do={:log info "wifi uzhe otkluchen"} else={interface wireless disable wlan1; :log info "skript vikluchil wifi"}} else={}
