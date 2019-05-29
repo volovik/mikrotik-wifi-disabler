@@ -1,8 +1,8 @@
 # mikrotik-wifi-disabler
 
-# disable wifi if lan port connected
+Auto disable wifi if lan port connected
 
-# Testd only on RouterBOARD 951-2n (RB951-2n) https://www.router-reset.com/reset-manuals/MikroTik/RouterBOARD-951-2n-RB951-2n
+Testd only on RouterBOARD 951-2n (RB951-2n) https://www.router-reset.com/reset-manuals/MikroTik/RouterBOARD-951-2n-RB951-2n
 
 # Source info:
 https://forummikrotik.ru/viewtopic.php?t=5573
