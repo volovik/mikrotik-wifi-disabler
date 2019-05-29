@@ -19,7 +19,7 @@
 
 # change this value if you need it
 
-:global lan ether2-master-local;
+:global lan ether3-slave-local;
 :global wan wlan1;
 :global wan5g wlan2;
 
@@ -36,5 +36,5 @@
 
 #:log info "status Wi-Fi porta $w";
 
-:if ($l = "link-ok") do={:log info "$lan podkluchen"; :if ($w = "running-ap") do={:log info "rabotayu - otkuchayu $wan i $wan5g"; interface wireless disable $wan; interface wireless disable $wan5g;} else={ :log info "wifi uzhe otkluchen" }} else={:log info "$lan ne podkluchen"}
-:if ($l = "no-link") do={:log info "$lan otkluchen"; :if ($w = "running-ap") do={:log info "Wi-Fi $wan i $wan5g uzhe vkluchen"} else={ :log info "Rabotayem - vkluchaem Wi-Fi $wan i $wan5g"; interface wireless enable $wan; interface wireless enable $wan5g}} else={:log info "else else"}
+:if ($l = "link-ok") do={:log info "$lan podkluchen"; :if ($w = "running-ap" or $w = "searching-for-network" or $w = "connected-to-ess") do={:log info "rabotayu - otkuchayu $wan i $wan5g"; interface wireless disable $wan; interface wireless disable $wan5g;} else={ :log info "wifi uzhe otkluchen" }} else={:log info "$lan ne podkluchen"}
+:if ($l = "no-link") do={:log info "$lan otkluchen"; :if ($w = "running-ap" or $w = "searching-for-network" or $w = "connected-to-ess") do={:log info "Wi-Fi $wan i $wan5g uzhe vkluchen"} else={ :log info "Rabotayem - vkluchaem Wi-Fi $wan i $wan5g"; interface wireless enable $wan; interface wireless enable $wan5g}} else={:log info "else else"}
